@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión de correo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src='generarCorreo.js'></script>
+</head>
+<body>
+	<header id="header" class="">
+		<nav>
+			<ul>
+				<li><a href="" title=""></a></li>
+			</ul>
+		</nav>	
+	</header><!-- /header -->
+
+	<aside>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Cabecera del correo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="radio" id="gestion" value="Gestionliberaciones.ve@telefonica.com"> Destinatario Principal: Gestion de liberaciones
+					</td>
+				</tr>
+				<tr>
+					<td>						
+						<table border="1">
+							<thead>
+								<tr>
+									<th colspan="2">Con copia a:</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										TCS
+										<br>
+										<input type="checkbox" name="correo1" value="ericka.montero@tcs.com.ve" checked>Ericka Montero <br>
+										<input type="checkbox" name="correo2" value="jacqueline.gomez@tcs.com.vee">Jacqueline Gomez <br>
+									</td>
+									<td>Telefonica
+										<br>
+										<input type="checkbox" name="correoM1" value="Carina.Millan@telefonica.com">Carina Millan <br>
+										<input type="checkbox" name="correoM2" value="Jhonny.Garay@telefonica.com">Jhonny Garay <br>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>Asunto <br>
+						<table border="1">
+							<tbody>
+								<tr>
+									<td>Nombre ruta de la Entrega / Change Request </td>
+									<td><input type="text" name="change"></td>
+								</tr>
+								<tr>
+									<td>Número de la entrega:</td>	
+									<td><input type="text" name="entrega"></td>
+								</tr>
+								<tr>
+									<td>Nº de requerimiento / Caso HD / Nº de Proyecto :</td>
+									<td><input type="text" name="nombreProyecto"></td>
+								</tr>
+							</tbody>
+						</table>	
+					</td>
+				</tr>
+			</tbody>
+			<button type="submit">Generar cabecera de correo</button>
+			<section id='cabeceraCorreo'>
+				<p id='para'></p>
+				<p id='conCopia'></p>
+				<p id='asuntoCorreo'></p>
+				<div></div>
+			</section>
+		</table>
+	</aside>
+
+
+</body>
+</html>
