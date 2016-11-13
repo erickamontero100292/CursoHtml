@@ -3,8 +3,8 @@
 <head>
 	<title>Gestión de correo</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" src='generarCorreo.js'></script>
+	<link rel="stylesheet" type ="text/css" href="jquery-ui.css">
+
 </head>
 <body>
 	<header id="header" class="">
@@ -61,7 +61,7 @@
 							<tbody>
 								<tr>
 									<td>Nombre ruta de la Entrega / Change Request </td>
-									<td><input type="text" id="change"></td>
+									<td id="changeCell"><input type="text" id="change"></td>
 								</tr>
 								<tr>
 									<td>Número de la entrega:</td>	
@@ -69,7 +69,7 @@
 								</tr>
 								<tr>
 									<td>Nº de requerimiento / Caso HD / Nº de Proyecto :</td>
-									<td><input type="text" id="nombreProyecto"></td>
+									<td id='nombreProyectoCell'><input type="text" id="nombreProyecto"></td>
 								</tr>
 							</tbody>
 						</table>	
@@ -77,15 +77,111 @@
 				</tr>
 			</tbody>
 		</table>
-		<button id='generarCabecera' type="submit">Generar cabecera de correo</button>
-		<section id='cabeceraCorreo'>
-			<p id='para'></p>
-			<p id='conCopia'></p>
-			<p id='asuntoCorreo'></p>
-			<div></div>
-		</section>
+		<table border="1">
+				<thead>
+					<tr>
+						<th>Entregas</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>
+						<input type="checkbox" value="operaciones">Operaciones
+						<br>
+						<input type="checkbox" value="mmo">MMO
+						<br>
+						<input type="checkbox" id="script">Scripts
+						<br>
+						<div id="divScript">
+						Nombre del scripts: <input id="nombreScript"type="text">
+						<button type="submit" id="crearScript">Crear nombre scripts</button>
+						</div>
+
+					</td>
+
+				</tr>
+			</table>
+			<div id="espacioScript"></div>
 	</aside>
+	<section id='cabeceraCorreo'>
+		<p id='para'></p>
+		<p id='conCopia'></p>
+		<p id='asuntoCorreo'></p>
+		<div></div>
+		<aside>
+			<table id="solicitudTable" border="1">
+				<thead>
+					<tr>
+						<th class="fillCell" colspan="2">Solicitud de Procesamiento de Entregas</th>
+					</tr>
+				</thead>
+				<tr>
+					<td class="fillCell">Nº de requerimiento / Caso HD / Nº de Proyecto</td>
+					<td id="numeroProyecto"><input type="text"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Descripción de: Nº de requerimiento / Caso HD / Nº de Proyecto</td>
+					<td id="descripcionProyecto"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Aplicativo / Proyecto</td>
+					<td id="aplicativo"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Tipo de Entrega (Interna o Externa)</td>
+					<td id="tipoEntrega"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Número de Entrega</td>
+					<td id="numeroEntrega"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Forma de Entrega (Release o Dimensions)</td>
+					<td id="formaEntrega"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Ruta de la Entrega / Change Request</td>
+					<td id="rutaEntrega"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Impacto / Motivo</td>
+					<td id="impacto"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Número de incidencias asociadas (De ser el caso, sino N/A)</td>
+					<td id="incidencias"></td>
+				</tr>
+				<tr>
+					<td class="fillCell">Número de CDC Asociado (De ser el caso, sino N/A)</td>
+					<td id="cdcAsociado"></td>
+				</tr>
+			</table>
+			
+		</aside>
+		<aside>
+			<table id="detalleTable" border="1">
+				<thead>
+					<tr>
+						<th colspan="3">Tabla 2</th>
+					</tr>
+				</thead>
+				<tr>
+					<td class="fillCell">Entrega</td>
+					<td class="fillCell">Observación</td>
+					<td class="fillCell">Fecha</td>
+				</tr>
+				<tr>
+					<td>EXX</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste temporibus, error. Unde ad, vero sit incidunt doloremque labore.</td>
+					<td><input type="text" id="datepicker"></td>
+				</tr>
+			</table>
+		</aside>
+		
+	</section>
+	<button id='generarCabecera' type="submit">Generar cabecera de correo</button>
 
-
+	<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src='generarCorreo.js'></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
 </body>
 </html>
